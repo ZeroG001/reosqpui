@@ -1,0 +1,647 @@
+
+/* Color Palette 
+
+Gray - 515151
+White - FFFFFF
+REO Blue - #006DCC
+QWhite - EEEEEE
+
+
+*/
+
+body {
+	font-family: helvetica, 'sans-serif';
+}
+
+* {
+	box-sizing: border-box;
+}
+
+
+.i_container {
+width: 1300px;
+min-height: 465px;
+margin: 0px auto;
+background-color: #FFF;
+position: relative;
+border-left: 1px solid #D8D8D8;
+border-right: 1px solid #D8D8D8;
+}
+
+.sk_container {
+	background-color: #EEEEEE;
+}
+
+
+
+
+/* ---- Flash Message Styles ---- */
+
+.pay-flash-message {
+	z-index: 40;
+	position: fixed;
+	display: inline;
+	margin: 0px auto;
+	top: -5rem;
+	left: 0;
+	right: 0;
+	margin: 0px auto;
+	width: 40rem;
+	background-color: #EEEEEE;
+	padding: 1rem;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	text-align: center;
+	font-size: 1.2rem;
+
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+
+	-webkit-transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+}
+
+
+.swp-section-wrap {
+	display: block;
+	background-color: #EDEDED;
+}
+
+.flash-message-warning {
+
+	-webkit-transition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+
+	color: #8A6D3B;
+	background-color: #F2DEDE;
+	border-color: #FAEBCC;
+}
+
+.flash-message-notice {
+
+	-webkit-tranasition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+
+	display: block;
+	color: #31708F;
+	background-color: #D9EDF7;
+	border-color: #BCE8F1;	
+}
+
+.flash-message-success {
+
+	-webkit-tranasition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+
+	display: block;
+	/*color: #3C763D;*/
+	color: #4CAF50;
+	background-color: #DFF0D8;
+	border-color: #D6E9C6;
+	padding: 3rem;
+}
+
+.flash-message-danger {
+
+	-webkit-tranasition: 0.5s ease;
+	-moz-transition: 0.5s ease;
+	-o-transition: 0.5s ease;
+	transition: 0.5s ease;
+
+	display: block;
+	color: #A94442;
+	background-color: #F2DEDE;
+	border-color: #EBCCD1;
+}
+
+.flash-message-img {
+	display: block;
+	text-align: center;
+	margin: 0px auto;
+}
+
+
+.pay_category {
+
+	display: block;
+	
+	padding: 30px 0px;
+
+	width: 80%;
+	margin: 0px auto;
+}
+
+.pay-section-header {
+/*	text-align: center;*/
+	/* margin: 0px; */
+	margin: 14px 0px 19px 0px;
+}
+
+.pay-section-description {
+	margin: 30px auto;
+	font-size: 1.0rem;
+	letter-spacing: 0.8px;
+}
+
+.pay-content-box {
+	box-sizing: border-box;
+	position: relative;
+	display: block;
+	border-radius: 5px;
+	border: 1px solid #006DCC;
+}
+
+.pay-content-box ul {
+	display: block;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	width: 130px;
+}
+
+.pay-content-box.box-large {
+	width: 267px;
+
+}
+
+.pay-content-box.box-small {
+	width: 222px;
+	padding:65px 0px;
+	
+}
+
+.pay-content-box h3 {
+	text-align: center;
+	color: #006DCC;
+	margin: 10px 0px;
+	
+}
+
+/* --------- This is the forte button ------- */
+.pay-content-box .pay-content-button ,
+.swp-modal-open,
+.pay-content-box .paypal_btn {
+
+	bottom: 1rem;
+	width: 90%;
+	height: 50px;
+	font-size: 1.2rem;
+	border-radius: 4px;
+	letter-spacing: 0.05rem;
+	display: block;
+	color: white;
+	margin: 10px auto;
+	background-color: #006DCC;
+	border: #BCE8F1;
+}
+
+
+
+.pay-content-box .pay-content-button:hover, 
+.swp-modal-open:hover,
+.pay-content-box .paypal_btn:hover {
+	background-color: #208DEC;
+
+	-webkit-transition: 0.2s ease;
+	-moz-transition: 0.2s ease;
+	-o-transition: 0.2s ease;
+}
+
+.pay-content-box input[type="test"] {
+	display: block;
+	border: 1px solid black;
+	width: 80px;
+	height: 30px;
+	margin: 0px auto;
+}
+
+.pay-content-box .price-header {
+	line-height: 0.4;
+	font-weight: 100;
+	font-size: 3.1rem;	
+}
+
+.pay-content-box .price-header span {
+	font-weight: 100;
+	font-size: 1.1rem;
+}
+
+
+.pay-input {
+	color: #006DCC;
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.pay-input input {
+	font-size: 1.4rem;
+	color: #006DCC;
+	border: 0px;
+	text-align: center;
+	
+	background-color: #E6E8E3;
+	border-bottom: 1px solid #006DCC;
+	width: 90%;
+
+}
+
+.pay-input span {
+	font-size: 1.4rem;
+	color: #006DCC;
+}
+
+#terms-section {
+	/*background-color: #f1f1f1;*/
+}
+
+#terms-section ol {
+	/*background-color: #f1f1f1;*/
+	color: #494949;
+}
+
+.terms-conditions-list li {
+	margin: 1rem 0px;
+}
+
+#q-pay-input {
+
+}
+
+#s-pay-input {
+
+}
+
+
+/*  Font Awesome Styles
+================================= */
+
+.fa.fa-check {
+	color: green;
+}
+
+.fa.fa-times {
+	color: red;
+}
+
+
+/* Modal Styles
+========================== */
+
+.swp-modal-popup {
+	/*display: inline;*/
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.3);
+	z-index: 10;
+
+
+}
+
+.swp-modal-content {
+    margin-top: -293px;
+    margin-left: -225px;
+    opacity: 1;
+    position: fixed;
+    transform: translateY(0) scale(1);
+    transition: none 0 ease 0;
+    left: 50%;
+    top: 50%;
+    width: 452px;
+    height: 420px;
+    /*height: 580px;*/
+    border-top: 4px solid #418bca;
+    border-left: 1px solid #778180;
+    border-right: 1px solid #778180;
+    border-bottom: 1px solid #778180;
+    background-color: #fff;
+    padding: 24px 43px 0px 43px;
+}
+
+.swp-modal-header {
+	position: relative;
+}
+
+.swp-modal-header h4 {
+	padding: 0px 0px 10px;
+	margin: 10px 0px;
+
+	font-size:  17.5px;
+	font-weight: bold;
+	line-height: 20px;
+	color: inherit;
+	text-rendering: optimizelegibility;
+
+}
+
+
+.swp-modal_close {
+
+	background-color: transparent !important;
+	background-image: url('https://s3.amazonaws.com/public.forte.prod/fc.images/close-btn.png');
+	background-repeat: no-repeat;
+	border: 0px solid;
+	color: transparent;
+	cursor: pointer;
+	height: 33px;
+	margin-top: 6px;
+	right: -39px;
+	bottom: 21px;
+	opacity: 0.9;
+	padding: 0px;
+	position: absolute;
+	width: 33px;
+
+	/*left: 413px;*/
+	/*line-height: 15px;*/
+	/*margin-right: -10px;*/
+	/* z-index: 2147483647;*/
+	/*float: right;*/
+}
+
+.swp-modal-button {
+	display: inline;
+	position: absolute;
+	right: 30px;
+	top: -15px;
+	background-color: #006DCC;
+	border: 1px solid gray;
+	color: #FFF;
+	cursor: pointer;
+	height: 36px;
+	width: 92px;
+}
+
+.swp-modal-button:hover {
+	background-color: #208DEC;
+	
+	/* This is later changed through Javascript */
+	cursor: not-allowed;
+}
+
+.swp-file-icon-container__a {
+	text-decoration: none;
+	font-size: normal;
+}
+
+
+/* === Recurring and Annual Payment Section === */
+
+.swp-file-icon-container {
+	position: relative;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 65px 0px;		
+    width: 221px;							
+}
+
+.swp-file-icon-container img {
+	display: block;
+	margin: 10px auto;
+}
+
+.swp-file-icon-container h5 {
+	color: #e8280c;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	margin: 10px 0px;
+}
+
+/* ============================================ */
+
+
+.swp-modal-body {
+	margin: 10px 0px;
+}
+
+.swp-modal-footer {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 33px;
+	box-sizing: border-box;
+	/*background-color: gray;*/
+	bottom: 0px;
+	left: 0px;
+}
+
+/* Modal styles end */
+
+.swp-modal-body .legend {
+    border-bottom-color: #e5e5e5;
+    border-top-color: #fff;
+    border-image: none;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    display: block;
+    padding-bottom: 8px;
+    width: 363px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.modal-input-field {
+	border: 1px solid #ccc;
+    color: #555;
+    display: inline-block;
+    height: 30px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    padding: 4px 6px;
+    margin-left: 0;
+    font-weight: normal;
+    display: block;
+    width: 100%;
+}
+
+textarea.modal-input-field {
+	height: 110px;
+	resize: none;
+}
+
+/* Animation Class 
+===============================*/
+.fade-in {
+
+	display: inline;
+
+	-webkit-animation: fadein 0.5s ease;
+	-moz-animation: fadein 0.5s ease;
+	-o-keyframes: fadein 0.5s ease;
+	keyframes: fadein 0.5s ease;
+
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+.fade-out {
+
+	display: inline;
+
+	-webkit-animation: fadeout 0.5s ease;
+	-moz-animation: fadeout 0.5s ease;
+	-o-animation: fadeout 0.5s ease;
+	animation: fadeout 0.5s ease;
+
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+
+.fade-in-out {
+
+	display: inline;
+
+	-webkit-animation: fadeInOut 5s ease;
+	-moz-animation: fadeInOut 5s ease;
+	-o-animation: fadeInOut 5s ease;
+	animation: fadeInOut 5s ease;
+
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+.slide-in-out {
+
+	display: inline;
+	-webkit-animation: slideInOut 5s ease;
+	-moz-animation: slideInOut 5s ease;
+	animation: slideInOut 5s ease;
+
+	-webkit-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+
+/* Keyframes 
+================================*/
+
+	/* Fade-in (Show hidden item)
+	======================*/
+
+
+	@-webkit-keyframes fadein {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	@-moz-keyframes fadein {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	@-o-keyframes fadein {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	@keyframes fadein {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	/* Fade-out (Hide item)
+	======================*/
+
+	@-webkit-keyframes fadeout {
+		from { opacity: 1; }
+		to { opacity: 0; }
+	}
+
+	@-moz-keyframes fadeout {
+		from { opacity: 1; }
+		to { opacity: 0; }
+	}
+
+	@-o-keyframes fadeout {
+		from { opacity: 1; }
+		to { opacity: 0; }
+	}
+
+	@keyframes fadeout {
+		from { opacity: 1; }
+		to { opacity: 0; }
+	}
+
+
+	/* FadeInOut (Hide item)
+	======================*/
+
+	@-webkit-keyframes fadeInOut {
+	  0% {opacity: 0;}
+	  20% {opacity: 1;}
+	  90% {opacity: 1;}
+	  100% {opacity: 0;}
+	}
+
+
+	@-o-keyframes fadeInOut {
+	  0% {opacity: 0;}
+	  20% {opacity: 1;}
+	  90% {opacity: 1;}
+	  100% {opacity: 0;}
+	}
+
+
+	@keyframes fadeInOut {
+	  0% {opacity: 0;}
+	  20% {opacity: 1;}
+	  90% {opacity: 1;}
+	  100% {opacity: 0;}
+	}
+
+
+	/* SlideInOut 
+	========================== */
+	
+	@-webkit-keyframes slideInOut {
+		0% { top: -15rem; }
+		20% { top: 1rem; }
+		90% { top: 1rem; }
+		100% { top: -15rem; }
+	}
+
+	@-moz-keyframes slideInOut {
+		0% { top: -15rem; }
+		20% { top: 1rem; }
+		90% { top: 1rem; }
+		100% { top: -15rem; }		
+	}
+
+
+	@keyframes slideInOut {
+		0% { top: -15rem; }
+		20% { top: 1rem; }
+		90% { top: 1rem; }
+		100% { top: -15rem; }
+	}
+
+
+
+
+	/* Media Queries
+	===========================*/
+
+	@media screen and (min-width: 756px) {
+
+	}
