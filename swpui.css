@@ -1,0 +1,16 @@
+body {
+	background-color: gray;
+}
+
+.container {
+	margin: 0px auto;
+	display: block;
+	padding: 40px;
+	background-color: white;
+	color: #6c6c6c;
+	width: 500px;
+}
+
+.container h1 {
+	color: black;
+}

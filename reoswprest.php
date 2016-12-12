@@ -26,7 +26,17 @@
 	}
 
 	$auth_token = base64_encode($APIKey.':'.$SecureTransactionKey);
+
+	echo "my auth token is " . $auth_token . " ";
+
+
+	/* API CALL URL HERE 
+	------------------------------------------- */
+	# $service_url = $url.'/v2/accounts/'.$AccountID.'/locations/'.$LocationID.'/customers/';
 	$service_url = $url.'/v2/accounts/'.$AccountID.'/locations/'.$LocationID.'/customers/';
+
+	echo $service_url;
+	
 	
 	$curl = curl_init($service_url);
 	curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "GET");

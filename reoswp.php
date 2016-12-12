@@ -159,29 +159,61 @@
 
 						<div class="four columns">
 
-							<a class="swp-file-icon-container__a" href="docs/pdf/Paper_Based_Credit_Card_Authorization_Form_rev_March_2016.pdf">
-								<div class="swp-file-icon-container">
-									<img src='images/onlinepay/file-pdf-icon.svg'>
-									<h5> Credit Card Authorization PDF </h5>
-								</div>
-							</a>
+							
+							<div class="pay-content-box box-small">
+								<!-- Pay Now -->
+								<h3> Recurring Payment </h3>
+
+
+								<!-- 
+									swp-modal-popup *HAS* to be "next" for any of this to work :/	
+								-->
+									<button api_login_id="<?php echo APIKEY ?>"
+										class=" swp-modal-open"
+										method="schedule"
+										billing_company_name_attr="hide"
+										billing_street_line2_attr="hide"
+										version_number="1.0"
+										utc_time="<?php echo $plan_custom->utc_time ?>"
+										hash_method="md5"
+										signature="<?php echo $plan_custom->create_signature() ?>"
+										callback="oncallback_sale"
+										total_amount=""
+										schedule_start_date="<?php echo $schedule_begin ?>"
+										schedule_frequency="weekly"
+										schedule_continuous="true"
+										order_number="<?php echo $plan_custom ->order_number ?>"
+										xdata_1="n/a"
+										xdata_2="n/a"
+										xdata_3=""
+										>
+									    </span>Start<span>
+									</button>
+
+
+							</div> <!-- Content box end -->
 
 						</div>
 
 						<div class="eight columns">
 
-							<h2 class="pay-section-header"> Recurring and Annual Payments </h2>
+							<h2 class="pay-section-header"> One-Time Payment </h2>
 
 							<p>
-								If you&#39d like to make monthly recurring payments or prepay select fees on an annual basis, please download and complete the form below.  
-								Send this form to Rebecca Chamberlin at the corporate office for processing.
+								Make a payment on your account. 
+								Enter the AMOUNT DUE, as shown on the Real Estate One Invoice/Statement, in the box below and click the Pay Now button. 
+								Additionally, payments greater than the amount due are also accepted (pay in advance, carry a credit balance, and not worry about due dates, late fees and interest). 
+								See additional <a href="#terms-section"> Terms and Conditions </a> below. 
 							</p>
-							
+
 						</div>
 
 					</div>
 
 				</section>
+
+
+
 
 
 
