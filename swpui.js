@@ -193,10 +193,6 @@
 
 
 
-	$(".result__scheduleitems").click(function() {
-		alert("You clicked me");
-		// getScheduleItems( this.val() );
-	})
 
 
 
