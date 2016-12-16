@@ -1,20 +1,10 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['type'])) {
 
-//   if($_POST['type'] == "schedules") {
-//     $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/schedules";
-//   } else if($_POST['type'] == "customers") {
-//     $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/customers";
-//   } else if($_POST['type'] == "scheduleitems") {
-//     $curl_url = "https://sandbox.forte.net/API/v3/schedules/".scheduleId."/scheduleitems";
-//   } else {
-//     $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/schedules";
-//   }
-  
-// }
 
-  switch ($_POST['type']) {
+  $thingy = "schedules";
+
+  switch ( $thingy ) {
 
     case 'schedules':
       $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/schedules";
@@ -59,7 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['type'])) {
 
   $response = curl_exec($curl);
   $err = curl_error($curl);
-
   curl_close($curl);
 
   if ($err) {
@@ -67,5 +56,3 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['type'])) {
   } else {
     echo $response;
   }
-
-}
