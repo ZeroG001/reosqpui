@@ -5,7 +5,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['type'])) {
 
   if($_POST['type'] == "schedules") {
     $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/schedules";
-  } else if($_POST['type'] == "user_schedules") {
+  } else if($_POST['type'] == "customers") {
+    $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/customers";
+  } else if($_POST['type'] == "scheduleitems") {
     $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/customers";
   } else {
     $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/schedules";
@@ -17,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['type'])) {
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://sandbox.forte.net/API/v3/organizations/org_338275/schedules",
+  CURLOPT_URL => $curl_url,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
