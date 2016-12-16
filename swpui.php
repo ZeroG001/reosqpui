@@ -18,7 +18,15 @@
 			<label for="search"> Search </label>
 			<input type="text" id="search" name="search">
 			
-			<div class="result"> </div>
+			<div class="result"> <!-- o_o --> </div>
+
+
+			<div class="links"> </div>
+			
+			<div class="infoPresent"> 
+				<!-- Show result -->
+			</div>
+
 
 		</div>
 

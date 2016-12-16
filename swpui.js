@@ -27,17 +27,18 @@
 				var results = resultsJSON.results;
 				ajaxResults = results;
 				showResults(results);
-
+				
 			}
 		})
 	}
+
 
 
 	function getScheduleItems(scheduleId) {
 
 		$.ajax({
 			type: "POST",
-			data: {"type": "scheduleitems", "id" : scheduleId},
+			data: {"type": "scheduleitems", "scheduleId" : scheduleId},
 			url: "swpuiactions/getTransactions.php",
 			beforeSend: function() {
 				ajaxResults = [];
@@ -57,8 +58,8 @@
 	}
 
 
-	function getCustomers() {
 
+	function getCustomers() {
 
 		$.ajax({
 			type: "POST",
@@ -80,8 +81,9 @@
 			}
 		})
 	}
-
-
+	
+	
+		
 	// Should only take the results array from the API response
 	function showResults(results = ajaxResults) {
 
@@ -122,6 +124,8 @@
 		}
 	}
 
+
+
 	function parseUrlForScheduleItems(url) {
 
 	    myFilter = function(ele) {
@@ -134,6 +138,7 @@
 	  		return filteredArray[0]
 	 
 	}
+
 
 
 	function searchTransactionOrderNumber(string, results) {
@@ -151,7 +156,6 @@
 
 		finalArray = results.filter(fil);
 		showResults(finalArray);
-		
 	}
 
 
@@ -160,11 +164,10 @@
 		// so if I clicke on https://sandbox.forte.net/API/v3/schedules/sch_bfe64af4-6e40-4156-85b1-c26757df1b2a/scheduleitems. It would show me the data and everything for that link.
 	}
 
-
 	function cancelSchedule() {}
 
-
 	function deleteSchedule() {}
+
 
 	// Search Schedules
 	// ------------------------------------	
@@ -189,17 +192,16 @@
 	})
 
 
-	$(".result__scheduleitems").click(function() {
-		getCustomers(this.val());
-	})
 
+	$(".result__scheduleitems").click(function() {
+		alert("You clicked me");
+		// getScheduleItems( this.val() );
+	})
 
 
 
 	$("#getTransactionUsers").click(function() {
 		getCustomers();
 	})
-
-
 
 })(jQuery)
