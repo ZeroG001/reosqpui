@@ -1,0 +1,21 @@
+<label for="schedule-search"> Search Schedule </label>
+<input type="text" ng-model="schedules.query" />
+
+<label for="schedule-filter"> Order By: </labelL>
+<select ng-model="schedules.scheduleProp">
+	<option value="order_number" selected> Location Number </option>
+	<option value="action"> Action </option>
+	<option value="ts_schedule_created_date"> Date Added </option>
+</select>
+
+
+<ul ng-repeat="schedule in schedules.schedules.results | filter: schedules.query | orderBy: schedules.scheduleProp">
+
+	<li> {{ schedule.action }} </li>
+	<li> {{ schedule.order_number }} </li>
+	<li> {{ schedule.schedule_id }} </li>
+	<li> {{ schedule.location_id }} </li>
+	<li> {{ schedule.schedule_created_date }} </li>
+	<a ng-click="schedules.getScheduleItems(schedule)" style="color: blue; cursor: pointer"> Schedule Items </a>
+	
+</ul>
