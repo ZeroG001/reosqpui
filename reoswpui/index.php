@@ -8,9 +8,7 @@
 	</head>
 
 	<body  ng-app="REOPayManager">
-		<schedule-list> </schedule-list>
-		<!-- <customer-list> </customer-list> -->
-		<!-- <div ng-view> </div> -->
+		<div ng-view> </div>
 	</body>
 
 </html>
@@ -23,5 +21,7 @@
 <script type="text/javascript" src="schedule-list/schedule-list.component.js"></script>
 <script type="text/javascript" src="customer-list/customer-list.module.js"> </script>
 <script type="text/javascript" src="customer-list/customer-list.component.js"></script>
+<script type="text/javascript" src="schedule-item-list/schedule-item-list.module.js"></script>
+<script type="text/javascript" src="schedule-item-list/schedule-item-list.component.js"></script>
 
 

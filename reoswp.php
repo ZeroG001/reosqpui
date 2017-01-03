@@ -9,7 +9,7 @@
 
 
 	 
-	# Sorry I had to repeat a bunch of code. If the girl/guy after me can refacotr this, that would be great.
+	# Sorry I had to repeat a bunch of code. If the programmer after me can refacotr this, that would be great.
 ?>
 
 

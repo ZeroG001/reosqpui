@@ -1,5 +1,6 @@
 angular.module('REOPayManager', [
 	'ngRoute',
 	'scheduleList',
-	'customerList'
+	'customerList',
+	'scheduleItemList'
 ]);

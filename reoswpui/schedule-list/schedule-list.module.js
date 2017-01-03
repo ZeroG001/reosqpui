@@ -1,1 +1,1 @@
-angular.module('scheduleList', [])
+angular.module('scheduleList', []);

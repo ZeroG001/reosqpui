@@ -1,0 +1,32 @@
+{
+  "name": "reoswpui",
+  "homepage": "https://github.com/ZeroG001/reosqpui",
+  "authors": [
+    "Blayne <blayneholland@outlook.com>"
+  ],
+  "description": "Real Estate One Payment Manager",
+  "main": "bower_components",
+  "keywords": [
+    "payment",
+    "real",
+    "estate",
+    "one",
+    "manager"
+  ],
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-route": "1.5.x",
+    "bootstrap": "3.3.x"
+  },
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/components/",
+    "test",
+    "tests"
+  ]
+}

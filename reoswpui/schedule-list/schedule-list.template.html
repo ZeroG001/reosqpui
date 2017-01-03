@@ -16,6 +16,6 @@
 	<li> {{ schedule.schedule_id }} </li>
 	<li> {{ schedule.location_id }} </li>
 	<li> {{ schedule.schedule_created_date }} </li>
-	<a ng-click="schedules.getScheduleItems(schedule)" style="color: blue; cursor: pointer"> Schedule Items </a>
+	<a href="#!/schedules/{{ schedule.schedule_id }}" style="color: blue; cursor: pointer"> Schedule Items</a>
 	
 </ul>

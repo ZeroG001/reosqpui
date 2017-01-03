@@ -15,8 +15,6 @@ angular.module('scheduleList').component( 'scheduleList',{
 		schedules.getScheduleItems = function(scheduleObj) {
 			console.log(scheduleObj);
 			$http.post('getTransactions.php', "type=schedules&scheduleId="+scheduleObj.schedule_id, postConfig).then( function(response) {
-				console.log("The schedule items are");
-				console.log(response.data);
 			});
 
 		}
