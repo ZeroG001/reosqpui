@@ -31,7 +31,7 @@ angular.module('scheduleList').component( 'scheduleList',{
 
 			var postConfig = { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
 
-			console.log(schedule);
+			console.log("the schedule id is" + schedule.schedule_id);
 
 
 			$http.post('getTransactions.php', "type=activateSchedule&scheduleId=" + schedule.schedule_id , postConfig).then( function(response) {
