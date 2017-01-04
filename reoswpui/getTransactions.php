@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
       break;
 
 
-    case "activeateScheduleItem": 
+    case "activateScheduleItem": 
       $method = "put";
       $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/locations/loc_181159/scheduleitems/". $params['scheduleItemId']; 
       $json_data = "{ \"schedule_item_status\" : \"scheduled\" }";
