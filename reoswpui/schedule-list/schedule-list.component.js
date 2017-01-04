@@ -5,6 +5,12 @@ angular.module('scheduleList').component( 'scheduleList',{
 	controller: function($http) {
 
 
+
+// action, customer_token, links, location_id, order_number, paymethod_token, schedule_amount, schedule_created_date, 
+// schedule_frequency, schedule_id, schedule_quantity, schedule_start_date, schedule_status, sec_code, ts_schedule_create_date
+
+
+
 		// ------------ Schedule Variables ------------
 		var schedules = this;
 		var postConfig = { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
@@ -18,6 +24,65 @@ angular.module('scheduleList').component( 'scheduleList',{
 			});
 
 		}
+
+
+
+		schedules.activateSchedule = function(schedule) {
+
+			var postConfig = { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
+
+			console.log(schedule);
+
+
+			$http.post('getTransactions.php', "type=activateSchedule&scheduleId=" + schedule.schedule_id , postConfig).then( function(response) {
+				
+				console.log("beginning to activate schedule");
+	
+
+				// Updated the schedule list after the update is complete.
+				schedules.getSchedules();
+				console.log("updating to active complete?");
+				console.log(response.data);
+			});
+		}
+	// https://auth.leadingre.com/intralink.aspx?COID=2543&UniqueID=244496
+	// https://access.leadingre.com/intralink.aspx?COID=2543&UniqueID=244496
+
+
+		// This function might be a little hard to test
+		schedules.getSchedules = function() {
+
+			$http.post('getTransactions.php', "type=schedules", postConfig).then( function(response) {
+
+				schedules.schedules = response.data;
+				console.log(response.data)
+
+				// Convert time to a timestamp that can be sorted
+				for (i in schedules.schedules.results) {
+					schedules.schedules.results[i].ts_schedule_create_date = schedules.parseDate(schedules.schedules.results[i].schedule_created_date);
+				}
+			});
+
+		}
+
+
+
+		schedules.deleteSchedule = function(schedule) {
+
+			console.log("schedule has been deleted."); 
+			var postConfig = { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
+
+			console.log(schedule);
+
+			$http.post('getTransactions.php', "type=deleteSchedule&scheduleId=" + schedule.schedule_id , postConfig).then( function(response) {
+				console.log("was the item deleted?");
+				console.log(response.data);
+				schedules.getSchedules();
+			});
+
+		}
+
+
 
 		schedules.parseDate = function(dateString) {
 
@@ -54,19 +119,7 @@ angular.module('scheduleList').component( 'scheduleList',{
 
 		// ------------ Schedules Main Event ------------
 
-		$http.post('getTransactions.php', "type=schedules", postConfig).then( function(response) {
-
-			schedules.schedules = response.data;
-
-			// Convert time to a timestamp that can be sorted
-			for (i in schedules.schedules.results) {
-				schedules.schedules.results[i].ts_schedule_create_date = schedules.parseDate(schedules.schedules.results[i].schedule_created_date);
-			}
-
-
-		});
-
-
+		schedules.getSchedules();
 
 
 	}

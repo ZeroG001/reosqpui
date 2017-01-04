@@ -11,11 +11,16 @@
 
 <ul ng-repeat="schedule in schedules.schedules.results | filter: schedules.query | orderBy: schedules.scheduleProp">
 
+
+
+	<li> {{ schedule.schedule_status}} </li> <!-- If schedule item status is one way then make it another way -->
 	<li> {{ schedule.action }} </li>
 	<li> {{ schedule.order_number }} </li>
 	<li> {{ schedule.schedule_id }} </li>
 	<li> {{ schedule.location_id }} </li>
 	<li> {{ schedule.schedule_created_date }} </li>
 	<a href="#!/schedules/{{ schedule.schedule_id }}" style="color: blue; cursor: pointer"> Schedule Items</a>
+	<button ng-click="schedules.deleteSchedule(schedule)"> Delete Schedule </button>
+	<button ng-click="schedules.activateSchedule(schedule)"> Activate Schedule </button>
 	
 </ul>

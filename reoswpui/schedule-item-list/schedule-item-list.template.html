@@ -3,7 +3,6 @@
 	<li> {{ scheduleItem.schedule_item_id }} </li>
 	<li> {{ scheduleItem.schedule_item_status }} </li>
 	<li> {{ scheduleItem.organization_id }} </li>
-	<a href="" style="color: blue; cursor: pointer"> Cancel Schedule </a>
-	<a href="" style="color: blue; cursor: pointer"> Resume Schedule </a>
-</ul> 
-
+	<button ng-click="scheduleItems.suspendScheduleItem(scheduleItem)" style="cursor: pointer"> Suspend Schedule </button>
+	<button ng-click="scheduleItems.activateScheduleItem(scheduleItem)"style="cursor: pointer"> Resume Schedule Item </button>
+</ul>
