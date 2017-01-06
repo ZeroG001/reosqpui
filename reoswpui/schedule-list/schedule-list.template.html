@@ -1,17 +1,14 @@
 <label for="schedule-search"> Search Schedule </label>
 <input type="text" ng-model="schedules.query" />
 
-<label for="schedule-filter"> Order By: </labelL>
+<label for="schedule-filter"> Order By: </label>
 <select ng-model="schedules.scheduleProp">
 	<option value="order_number" selected> Location Number </option>
 	<option value="action"> Action </option>
 	<option value="ts_schedule_created_date"> Date Added </option>
 </select>
 
-
 <ul ng-repeat="schedule in schedules.schedules.results | filter: schedules.query | orderBy: schedules.scheduleProp">
-
-
 
 	<li> {{ schedule.schedule_status}} </li> <!-- If schedule item status is one way then make it another way -->
 	<li> {{ schedule.action }} </li>

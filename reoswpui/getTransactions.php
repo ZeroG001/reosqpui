@@ -19,6 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
       break;
 
 
+
     case "scheduleItems":
       if ( isset( $params['scheduleId'] ) ) {
         $curl_url = "https://sandbox.forte.net/API/v3/schedules/".$params['scheduleId']."/scheduleitems"; 
@@ -28,12 +29,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
       }
       break;
 
+
+
     case "suspendScheduleItem": 
       $method = "put";
       $action = "suspend";
       $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/locations/loc_181159/scheduleitems/". $params['scheduleItemId']; 
       $json_data = "{ \"schedule_item_status\" : \"suspended\" }";
       break;
+
 
 
     case "activateScheduleItem": 
@@ -43,6 +47,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
       break;
 
 
+
     case "activateSchedule": 
       $method = "put";
       $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/locations/loc_181159/schedules/". $params['scheduleId']; 
@@ -50,10 +55,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
       break;
 
 
+
     case "deleteScheduleItem": 
       $method = "delete";
       $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/locations/loc_181159/scheduleitems/". $params['scheduleItemId']; 
       break;
+
 
 
     case "deleteSchedule": 
@@ -74,7 +81,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     case "customer":
       if (isset ($params['customerId'])) {
-        $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/customers/".$params['customerId'];
+        $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/customers/" . $params['customerId'];
         $method = 'get';
       } else {
         // Do something else. maybe add error message
@@ -82,10 +89,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
       break;
 
 
+
+    case "customerSchedules":
+      $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/locations/loc_181159/schedules?filter=customer_token+eq+".$params['customerId'];
+      $method = 'get';
+      break;
+
+
+
     default:
       $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/schedules";
       $method = "get";
       break;
+      
 
   }
 

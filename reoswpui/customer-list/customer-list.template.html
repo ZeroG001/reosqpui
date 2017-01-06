@@ -14,6 +14,7 @@
 	<li> {{ customer.default_billing_address_token }} </li>
 	<li> {{ customer.organization_id }} </li>
 	<li> {{ customer.customer_token }} </li>
-	<a href="" style="color: blue; cursor: pointer"> Customer Schedules </a>
-	<a href="" style="color: blue; cursor: pointer"> Customer Items </a>
+	<li> {{ customer.links.schedules }} </li>
+
+	<a href="#!/customers/{{customer.customer_token}}/schedules" style="color: blue; cursor: pointer"> Customer Schedules </a>
 </ul> 
