@@ -1,11 +1,17 @@
+<div ng-show="scheduleItems.scheduleItems.results.length <= 0" class="schedule-item-list no-results">
+	<p> No Schedule Items Found </p>
+</div>
+
 <ul ng-repeat="scheduleItem in scheduleItems.scheduleItems.results" >
+
 	<li> ${{ scheduleItem.schedule_item_amount }} </li>
-	<li> {{ scheduleItem.schedule_item_description }} </li>
-	<li> {{ scheduleItem.schedule_item_id }} </li>
-	<li> {{ scheduleItem.schedule_item_status }} </li>
-	<li> {{ scheduleItem.organization_id }} </li>
-	<li> {{ scheduleItem.schedule_item_date }} </li>
+	<li> Description: {{ scheduleItem.schedule_item_description }} </li>
+	<li> Item ID: {{ scheduleItem.schedule_item_id }} </li>
+	<li> Status: {{ scheduleItem.schedule_item_status }} </li>
+	<li> Organization ID: {{ scheduleItem.organization_id }} </li>
+	<li> Schedule Date: {{ scheduleItem.schedule_item_date }} </li>
 
 	<button ng-click="scheduleItems.suspendScheduleItem(scheduleItem)" style="cursor: pointer"> Suspend Schedule </button>
-	<button ng-click="scheduleItems.activateScheduleItem(scheduleItem)"style="cursor: pointer"> Resume Schedule Item </button>
+	<button ng-click="scheduleItems.activateScheduleItem(scheduleItem)" style="cursor: pointer"> Resume Schedule Item </button>
+	
 </ul>
