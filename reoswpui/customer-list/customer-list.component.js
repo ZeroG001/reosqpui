@@ -10,8 +10,7 @@ angular.module('customerList').component('customerList', {
 
 		$http.post('getTransactions.php', "type=customers", postConfig).then( function(response) {
 			customers.customers = response.data;
-			console.log("Did we get the customer data?");
-			console.log(response.data);
+			console.log(response.data.results);
 		});
 
 	}

@@ -13,7 +13,6 @@ angular.module('scheduleList').component( 'scheduleList',{
 
 		// ------------ Schedule Functions ------------
 		schedules.getScheduleItems = function(scheduleObj) {
-			console.log(scheduleObj);
 			$http.post('getTransactions.php', "type=schedules&scheduleId="+scheduleObj.schedule_id, postConfig).then( function(response) {
 			});
 
@@ -23,8 +22,6 @@ angular.module('scheduleList').component( 'scheduleList',{
 		schedules.activateSchedule = function(schedule) {
 
 			var postConfig = { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
-
-			console.log("the schedule id is" + schedule.schedule_id);
 
 
 			$http.post('getTransactions.php', "type=activateSchedule&scheduleId=" + schedule.schedule_id , postConfig).then( function(response) {
@@ -49,6 +46,7 @@ angular.module('scheduleList').component( 'scheduleList',{
 			$http.post('getTransactions.php', "type=schedules", postConfig).then( function(response) {
 
 				schedules.schedules = response.data;
+				console.log(response.data);
 
 				// Convert time to a timestamp that can be sorted
 				for (i in schedules.schedules.results) {
@@ -61,7 +59,7 @@ angular.module('scheduleList').component( 'scheduleList',{
 
 		schedules.deleteSchedule = function(schedule) {
 
-			console.log("schedule has been deleted."); 
+			console.log("Schedule has been deleted."); 
 			var postConfig = { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
 
 			$http.post('getTransactions.php', "type=deleteSchedule&scheduleId=" + schedule.schedule_id , postConfig).then( function(response) {
@@ -121,7 +119,6 @@ angular.module('scheduleList').component( 'scheduleList',{
 			  
 			  date = new Date(year, month, day, hour, minute, second);
 			  timeStamp = date.getTime() / 1000;
-			  console.log(parseInt(timeStamp));
 			  return timeStamp;
 
 			}
@@ -131,10 +128,8 @@ angular.module('scheduleList').component( 'scheduleList',{
 			schedules.showSchedules = function() {
 
 				if($routeParams.customerId) {
-					console.log("customer id received from route");
 					schedules.getCustomerSchedules($routeParams.customerId)
 				} else {
-					console.log("no customer ID provided. Showing list.");
 					schedules.getSchedules();
 					
 				}
