@@ -40,6 +40,27 @@ angular.module('scheduleList').component( 'scheduleList',{
 
 
 
+		schedules.suspendSchedule = function(schedule) {
+
+			var postConfig = { headers: {'Content-Type': 'application/x-www-form-urlencoded'} }
+
+
+			$http.post('getTransactions.php', "type=suspendSchedule&scheduleId=" + schedule.schedule_id , postConfig).then( function(response) {
+				
+
+				// Show error message if message is returned
+				if(response.data.response.response_desc) {
+					alert(response.data.response.response_desc);
+				}
+
+				// Updated the schedule list after the update is complete.
+				schedules.showSchedules();
+
+			});
+		}
+
+
+
 		// This function might be a little hard to test
 		schedules.getSchedules = function() {
 

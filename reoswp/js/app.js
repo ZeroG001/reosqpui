@@ -2,6 +2,7 @@
 // -------------------- Secure Web Pay Callbacks -------------------- //
 function oncallback_sale(response) {
 
+console.log(response);
 
 	message = JSON.parse( response.data );
 
@@ -75,6 +76,10 @@ function oncallback_sale(response) {
 
 } //oncallback_sale End
 
+
+function oncallback_sale_cust(response) {
+	console.log(response);
+}
 
 
 

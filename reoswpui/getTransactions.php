@@ -55,6 +55,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
       break;
 
 
+    case "suspendSchedule": 
+      $method = "put";
+      $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/locations/loc_181159/schedules/". $params['scheduleId']; 
+      $json_data = "{ \"schedule_status\" : \"suspended\" }";
+      break;
+
 
     case "deleteScheduleItem": 
       $method = "delete";
@@ -67,6 +73,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
       $method = "delete";
       $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/locations/loc_181159/schedules/". $params['scheduleId']; 
       break;
+
+
+    # ------------------- Transaction Actions ---------------------------
+
+    case "transactions":
+    $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/locations/loc_181159/transactions";
+    $method = 'get';
+    break;
 
 
 
@@ -92,6 +106,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     case "customerSchedules":
       $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/locations/loc_181159/schedules?filter=customer_token+eq+".$params['customerId'];
+      $method = 'get';
+      break;
+
+
+    case "customerTransactions":
+      $curl_url = "https://sandbox.forte.net/API/v3/organizations/org_338275/locations/loc_181159/transactions?filter=customer_token+eq+".$params['customerId'];
       $method = 'get';
       break;
 

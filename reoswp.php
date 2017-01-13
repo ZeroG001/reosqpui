@@ -165,11 +165,11 @@
 								<h3> Recurring Payment </h3>
 
 
+
 								<!-- 
 									swp-modal-popup *HAS* to be "next" for any of this to work :/	
 								-->
 									<button api_login_id="<?php echo APIKEY ?>"
-										
 										class=" swp-modal-open"
 										method="schedule"
 										billing_company_name_attr="hide"
@@ -182,14 +182,73 @@
 										total_amount=""
 										schedule_start_date="<?php echo $schedule_begin ?>"
 										schedule_frequency="weekly"
-										schedule_continuous="true"
-										order_number="<?php echo $plan_custom ->order_number ?>"
+										schedule_continuous=true
+										order_number="<?php echo $plan_custom->order_number ?>"
 										xdata_1="n/a"
 										xdata_2="n/a"
 										xdata_3=""
 										>
 									    </span>Start<span>
 
+									</button>
+
+
+							</div> <!-- Content box end -->
+
+						</div>
+
+						<div class="eight columns">
+
+							<h2 class="pay-section-header"> Recurring Payment </h2>
+
+							<p>
+								Make a payment on your account. 
+								Enter the AMOUNT DUE, as shown on the Real Estate One Invoice/Statement, in the box below and click the Pay Now button. 
+								Additionally, payments greater than the amount due are also accepted (pay in advance, carry a credit balance, and not worry about due dates, late fees and interest). 
+								See additional <a href="#terms-section"> Terms and Conditions </a> below. 
+							</p>
+
+						</div>
+
+					</div>
+
+				</section>
+
+
+
+				<section class="pay_category">	
+
+					<div class="row">
+
+						<div class="four columns">
+
+							
+							<div class="pay-content-box box-small">
+								<!-- Pay Now -->
+								<h3> Pay As Marcus </h3>
+
+
+
+								<!-- 
+									swp-modal-popup *HAS* to be "next" for any of this to work :/	
+								-->
+									<button api_login_id="<?php echo APIKEY ?>"
+										class="swp-modal-open"
+										method="sale"
+										billing_company_name_attr="hide"
+										billing_street_line2_attr="hide"
+										version_number="1.0"
+										utc_time="<?php echo $marcus->utc_time ?>"
+										hash_method="md5"
+										signature="<?php echo $marcus->create_signature() ?>"
+										customer_token="<?php echo $marcus->customer_token ?>"
+										callback="oncallback_sale"
+										total_amount=""
+										order_number="<?php echo $marcus->order_number ?>"
+										xdata_1="n/a"
+										xdata_2="n/a"
+										xdata_3="">
+									    </span> Pay As Marcus <span>
 									</button>
 
 
@@ -213,8 +272,6 @@
 					</div>
 
 				</section>
-
-
 
 
 
@@ -248,4 +305,4 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"> </script>
 	<script type="text/javascript" src="reoswp/js/app.js"> </script>
 
-</html>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
