@@ -43,6 +43,21 @@ angular.module('transactionList').component('transactionList', {
 
 
 
+		transactions.refindTransactions = function(customerId) {
+
+			$http.post('getTransactions.php', "type=customerTransactions&customerId=" + customerId, postConfig).then( function(response) {
+
+				transactions.transactions = response.data;
+				console.log(response.data)
+			});
+
+
+		}
+
+
+
+
+
 			transactions.showTransactions = function() {
 
 				if($routeParams.customerId) {
